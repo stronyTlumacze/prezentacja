@@ -1,0 +1,194 @@
+$color-main: #32a1bd;
+$color-text-bright: #fff;
+$color-text-dark: #000;
+
+.aside-part {
+  aside {
+    background: rgb(255, 255, 255);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    z-index: 100;
+    height: 3rem;
+    border: 0.1rem solid #000;
+    
+    @include media('<=tablet') {
+      border-left: none;
+      border-right: none;
+    }
+
+    &.off {
+      display: none;
+    }
+
+    &.hover {
+      // background: rgba(0, 0, 0, 0.111);
+    }
+
+    &.hover p {
+      text-decoration: line-through;
+    }
+
+    @include media('>=tablet') {
+      width: 3rem;
+      height: auto;
+    }
+
+    p {
+      transform: rotate(0deg);
+      color: rgb(0, 0, 0);
+      white-space: nowrap;
+
+      @include media('>=tablet') {
+        transform: rotate(-90deg);
+      }
+    }
+  }
+}
+
+.grid-part {
+  //   display: grid;
+  //   grid-template-columns: 1fr;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  @include media('>=tablet') {
+    flex-direction: row;
+    // grid-template-columns: 3rem 1fr;
+  }
+}
+
+.padding-part {
+  padding: 2rem 1rem;
+
+  @include media('>=tablet') {
+    padding: 2rem 2rem;
+  }
+}
+
+.mbt-2 {
+  margin: 2rem 0;
+}
+
+.plr-2 {
+  padding: 0 2rem;
+}
+
+.mb-1 {
+  margin-bottom: 1rem;
+}
+
+.mr-1 {
+  margin-right: 1rem;
+}
+
+// BUTTON
+@mixin button($color1, $color2, $color3) {
+  // background: $color1; // transparent
+  padding: 1rem 1.5rem;
+  border: 1px solid $color2;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    background-color: $color2;
+    height: 100%;
+    width: 100%;
+    transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
+    z-index: 0;
+  }
+
+  &:hover::before {
+    left: 0%;
+  }
+
+  a,
+  span {
+    position: relative;
+    z-index: 1;
+    color: $color2;
+    transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
+    transition-delay: 0.15s;
+  }
+
+  &:hover {
+    a,
+    span {
+      color: $color3;
+    }
+  }
+}
+
+.title {
+  overflow: hidden;
+  display: inline-block;
+  margin: 5rem 0 2rem 0;
+
+  h2 {
+    position: relative;
+    text-align: center;
+    display: inline;
+
+    @include media('>=tablet') {
+      margin-left: 5rem;
+      text-align: left;
+    }
+
+    .mark {
+      position: absolute;
+      bottom: 0.2rem;
+      right: 0;
+      transform: translateX(100%);
+      height: 30%;
+      width: 70%;
+      background: $color-main;
+      z-index: -1;
+    }
+  }
+}
+
+.mark-image-container {
+  overflow: hidden;
+
+  .mark-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform: translateX(-100%);
+
+    .mark-image {
+      width: 100%;
+      height: 100%;
+      // box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    }
+
+    .mark-image-span {
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: #000;
+      height: 100%;
+      width: 100%;
+    }
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

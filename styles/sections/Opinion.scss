@@ -1,0 +1,46 @@
+.opinion__container {
+  @extend .grid-part;
+  @extend .aside-part;
+  background-color: #6dd5ed1a;
+
+  .opinion__wrapper {
+    width: 90%;
+    margin: 0rem auto;
+    position: relative;
+
+    @include media('>=tablet') {
+      margin: 2rem auto;
+    }
+
+    @include media('>=tablet') {
+      margin: 0rem auto;
+    }
+
+    .slick-slider {
+      overflow: hidden;
+      margin: 2rem 0;
+
+      @include media('>=tablet') {
+        margin: 4rem 0 4rem auto;
+        width: 80%;
+      }
+
+      .slider-element {
+        width: 100%;
+        display: flex !important;
+        justify-content: center !important;
+        outline: none !important;
+        flex-direction: column;
+        padding: 0 1rem;
+
+        h3 {
+          text-align: left;
+        }
+
+        p {
+          text-align: justify;
+        }
+      }
+    }
+  }
+}

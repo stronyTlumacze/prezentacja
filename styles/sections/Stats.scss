@@ -1,0 +1,48 @@
+.stats__container {
+  @extend .grid-part;
+  @extend .aside-part;
+
+  .stats__wrapper {
+    padding: 1rem 0;
+    width: 90%;
+    margin: 2rem auto;
+    position: relative;
+    background: linear-gradient(to left, #6dd5ed, #2193b0);
+
+    @include media('>=tablet') {
+      margin: 7rem auto 0 auto;
+    }
+
+    .stats__boxes {
+      display: grid;
+      grid-template-columns: 1fr;
+
+      @include media('>=phone') {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      @include media('>=tablet') {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+      }
+
+      .stats__box {
+        text-align: center;
+        padding-top: .8rem;
+        color: $color-text-bright;
+
+        @include media('<tablet') {
+          margin-bottom: 2rem;
+        }
+
+        p {
+          font-size: 60px;
+          margin-top: 2rem;
+        }
+      }
+
+      img {
+        width: 7rem;
+      }
+    }
+  }
+}

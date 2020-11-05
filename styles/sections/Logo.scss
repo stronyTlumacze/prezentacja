@@ -1,0 +1,29 @@
+.logo__container {
+  @extend .grid-part;
+  @extend .aside-part;
+
+  .logo__wrapper {
+    width: 90%;
+    margin: 0 auto;
+    position: 'relative';
+
+    .slick-slider {
+      overflow: hidden;
+
+      .slider-element {
+        width: 100%;
+        display: flex !important;
+        justify-content: center !important;
+        outline: none !important;
+
+        img {
+          width: 8rem;
+        }
+      }
+
+      .slick-dots {
+        bottom: 0px !important;
+      }
+    }
+  }
+}

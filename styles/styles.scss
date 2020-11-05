@@ -1,0 +1,142 @@
+@import './normalize.scss';
+
+@import 'utils/mixin.scss';
+@import 'utils/scroll.scss';
+@import 'utils/breakpoints.scss';
+@import 'utils/reusableClasses.scss';
+@import 'utils/404.scss';
+@import 'utils/error.scss';
+
+@import 'components/Intro.scss';
+@import 'components/Loader.scss';
+@import 'components/Grid.scss';
+@import 'components/Video.scss';
+
+@import 'sections/Footer.scss';
+@import 'sections/Navbar.scss';
+@import 'sections/Welcome.scss';
+@import 'sections/Logo.scss';
+@import 'sections/GeneralDesc.scss';
+@import 'sections/Stats.scss';
+@import 'sections/Service.scss';
+@import 'sections/Team.scss';
+@import 'sections/Certificate.scss';
+@import 'sections/Presentation.scss';
+@import 'sections/Price.scss';
+@import 'sections/Opinion.scss';
+@import 'sections/Gift.scss';
+@import 'sections/Contact.scss';
+
+@font-face {
+  //   font-family: maelstrom;
+  //   src: url('../public/font/maelstrom-bold.woff') format('truetype');
+}
+
+// Font-size
+$min_width: 300px;
+$max_width: 1600px;
+$min_font: 16px;
+$max_font: 26px;
+
+html {
+  // @include fluid-type($min_width, $max_width, $min_font, $max_font);
+  font-size: 18px;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden !important;
+  user-select: none;
+  // font-family: 'Montserrat', sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+#__next {
+  height: 100%;
+}
+
+p {
+  font-size: 20px;
+  line-height: 1.6rem;
+
+  // @include media('>=tablet') {
+  //   font-size: 24px;
+  //   line-height: 1.8rem;
+  // }
+}
+
+h1 {
+  @include media('>=tablet') {
+    font-size: 48px;
+  }
+}
+
+h2 {
+  @include media('>=tablet') {
+    font-size: 36px;
+  }
+}
+
+h3 {
+  font-size: 24px;
+}
+
+p, a, span {
+  font-family: 'Cardo', serif;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.layout__container {
+  // background-color: rgb(179, 179, 208);
+  height: 100%;
+  width: 100%;
+  position: relative;
+
+  //   @include media("<=tablet") {
+  //      height: 80%;
+  //   }
+
+  // @include media("<=654px") {
+  //     width: 100%;
+  //   }
+}
+
+.layout__wrapper {
+  // background-color: rgb(132, 132, 226);
+  height: 100%;
+  width: 100%;
+  min-height: calc(100vh - 10rem);
+  margin: 0 auto;
+}
+
+.offbtn {
+  z-index: 101;
+  position: fixed;
+  top: 0;
+  left: 0rem;
+  background: black;
+  padding: 0.3rem 0.5rem;
+  color: #fff;
+  cursor: pointer;
+
+  @include media('>=tablet') {
+    left: 3rem;
+  }
+
+  &.stick {
+    left: 0rem;
+  }
+}

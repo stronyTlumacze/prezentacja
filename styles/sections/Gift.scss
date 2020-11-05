@@ -1,0 +1,65 @@
+.gift__container {
+  @extend .grid-part;
+  @extend .aside-part;
+
+  .gift__wrapper {
+    width: 90%;
+    margin: 2rem auto;
+    background: #2193b0;
+    background: -webkit-linear-gradient(to left, #6dd5ed, #2193b0);
+    background: linear-gradient(to left, #6dd5ed, #2193b0);
+    padding: 1rem 0;
+    color: #fff;
+
+    @include media('>=tablet') {
+      margin: 7rem auto 0 auto;
+    }
+
+    .gift__info {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      @include media('>=tablet') {
+        flex-direction: row;
+        justify-content: space-between;
+        width: 80%;
+        margin: 0 auto;
+      }
+
+      .title {
+        h2 {
+          margin: 0;
+        }
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @include media('>=tablet') {
+          flex-direction: row;
+        }
+
+        input {
+          border: none;
+          margin: 1rem 0;
+          outline: none;
+          padding-left: 1rem;
+          background: #fcfcfd;
+          line-height: 3rem;
+          max-width: 30rem;
+
+          @include media('>=tablet') {
+            margin-right: 1rem;
+          }
+        }
+        button {
+          @include button($color-main, $color-text-bright, $color-text-dark);
+          align-self: center;
+        }
+      }
+    }
+  }
+}
