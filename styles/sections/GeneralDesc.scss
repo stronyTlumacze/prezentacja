@@ -10,6 +10,24 @@
     @include media('>=tablet') {
       margin: 0rem auto;
     }
+    
+    .SQUARE {
+      position: absolute;
+      bottom: 10rem;
+      left: -5rem;
+      height: 10rem;
+      width: 10rem;
+      opacity: 0.04;
+    }
+
+    .SQUARE2 {
+      position: absolute;
+      bottom: -3rem;
+      right: 0rem;
+      height: 10rem;
+      width: 10rem;
+      opacity: 0.04;
+    }
 
     .generalDesc__boxes {
       display: grid;

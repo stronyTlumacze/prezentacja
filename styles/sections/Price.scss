@@ -9,16 +9,30 @@
 
     @include media('>=tablet') {
       margin-bottom: 4rem;
+      margin-top: 2rem;
+      padding-bottom: 5rem;
     }
 
     .CIRCLE {
       position: absolute;
       top: 0rem;
-      right: -1rem;
+      right: -4rem;
       z-index: -1;
 
       @include media('>=tablet') {
         top: -7rem;
+      }
+    }
+
+    .CIRCLE2 {
+      position: absolute;
+      bottom: -8rem;
+      left: -15rem;
+      z-index: -1;
+      opacity: 0.04;
+
+      svg {
+        height: 31rem;
       }
     }
 

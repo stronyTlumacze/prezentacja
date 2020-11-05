@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import Aside from '../component/Aside';
 import { MarkAll } from '../effect/Mark';
-import { Koleczka } from '../svg/index';
+import { Koleczka, KoloKolo } from '../svg/index';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
@@ -17,7 +17,19 @@ function Price() {
         start: 'top 650px',
         scrub: 1,
       },
-      y: -100,
+      y: -70,
+      duration: 2,
+    });
+
+    gsap.to('.price__wrapper .CIRCLE2 svg', {
+      scrollTrigger: {
+        trigger: '.price__wrapper .CIRCLE2',
+        toggleActions: 'restart pause reverse pause',
+        start: 'top 650px',
+        scrub: 1,
+      },
+      y: 60,
+      x: 30,
       duration: 2,
     });
   }, []);
@@ -29,6 +41,9 @@ function Price() {
       <div className='price__wrapper'>
         <div className='CIRCLE'>
           <Koleczka />
+        </div>
+        <div className='CIRCLE2'>
+          <KoloKolo />
         </div>
         <div className='price__title'>
           <h2>

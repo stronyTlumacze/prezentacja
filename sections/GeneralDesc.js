@@ -6,6 +6,7 @@ import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 import { ShowUp } from '../effect/ShowUp';
 import { NewContext } from '../context/index';
+import { Kvadratbokiem } from '../svg/index';
 
 function GeneralDesc() {
   const { hideOrOpen } = useContext(NewContext);
@@ -18,12 +19,41 @@ function GeneralDesc() {
     ScrollTrigger.addEventListener('refreshInit', () =>
       gsap.set(elements, { y: 40, opacity: 0 })
     );
+
+    gsap.to('.generalDesc__wrapper .CIRCLE svg', {
+      scrollTrigger: {
+        trigger: '.generalDesc__wrapper .CIRCLE',
+        toggleActions: 'restart pause reverse pause',
+        start: 'top 650px',
+        scrub: 1,
+      },
+      y: 100,
+      x: 30,
+      duration: 2,
+    });
+
+    gsap.to('.generalDesc__wrapper .CIRCLE2 svg', {
+      scrollTrigger: {
+        trigger: '.generalDesc__wrapper .CIRCLE2',
+        toggleActions: 'restart pause reverse pause',
+        start: 'top 650px',
+        scrub: 1,
+      },
+      y: -100,
+      duration: 2,
+    });
   }, []);
   return (
     <div className='generalDesc__container'>
       <Aside title='Opis ogolny' />
 
       <div className='generalDesc__wrapper'>
+        <div className='SQUARE'>
+          <Kvadratbokiem />
+        </div>
+        <div className='SQUARE2'>
+          <Kvadratbokiem />
+        </div>
         <div className='title'>
           <h2>
             <span className='mark'></span>Sprawdz nas
@@ -31,7 +61,7 @@ function GeneralDesc() {
         </div>
         <div className='generalDesc__boxes'>
           {/* box */}
-          {data.map((el,i) => (
+          {data.map((el, i) => (
             <div className='generalDesc__box' key={el.img}>
               <div className='generalDesc__box-top'>
                 <img src={`./${el.img}`} />
@@ -39,7 +69,9 @@ function GeneralDesc() {
               </div>
               <div className='generalDesc__box-bottom'>
                 <p>{el.text}</p>
-                {el.video && <img src='tv.png' onClick={() => hideOrOpen(`url-${i}`)} />}
+                {el.video && (
+                  <img src='tv.png' onClick={() => hideOrOpen(`url-${i}`)} />
+                )}
               </div>
             </div>
           ))}

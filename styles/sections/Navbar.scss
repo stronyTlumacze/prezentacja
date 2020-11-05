@@ -23,13 +23,10 @@
       width: 90%;
       margin: 0 auto;
       align-items: center;
-
-      @include media('>=tablet') {
-        left: 6.9vw;
-      }
+      transform: translateX(1.5rem);
 
       &.normal {
-        left: 5vw;
+        transform: translateX(0rem);
       }
 
       .logo {

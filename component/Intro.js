@@ -18,7 +18,7 @@ function Intro() {
         ease: 'Power4.easeIn',
         duration: 0.8,
         opacity: 1,
-        y: '-60vh',
+        y: '-80vh',
         delay: 0.5,
         stagger: 0.1,
       }) // 2.5
