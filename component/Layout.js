@@ -4,6 +4,7 @@ import Navbar from '../sections/Navbar';
 import Intro from './Intro';
 import Grid from './Grid';
 import Video from '../component/Video';
+import Cursor from '../component/Cursor';
 
 import NewContextProvider from '../context/index';
 import { NewContext } from '../context/index';
@@ -12,6 +13,7 @@ function Layout({ children }) {
   return (
     <NewContextProvider>
       <div className='layout__container'>
+        <Cursor />
         <Button />
         {/* <Grid /> */}
         <Intro />
