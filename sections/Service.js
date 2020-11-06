@@ -4,7 +4,7 @@ import { Mark } from '../effect/Mark';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
-import Image from '../component/Image'
+import ImageEffect from '../component/ImageEffect'
 import { NewContext } from '../context/index';
 
 function Service() {
@@ -49,7 +49,7 @@ function Service() {
             if (el.id === id) {
               return (
                 <div className='service__box' key={el.id}>
-                  <Image cl='service__image' img={el.img}/>
+                  <ImageEffect cl='service__image' img={el.img}/>
                   <div className='service__info'>
                     <h2>{el.title}</h2>
                     <p>{el.text}</p>
@@ -70,15 +70,15 @@ export default Service;
 const data = [
   {
     id: 1,
-    img: './service1.jpg',
+    img: '/service1.jpg',
     title: 'Tlumaczenia przysiegle',
     text:
-      'Tłumaczenia dokumentów urzędowych np. świadectw, testamentów, aktów małżeństwa, urodzenia czy zgonu, pełnomocnictw wymagają często zaangażowania tłumacza przysięgłego.',
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sed tincidunt sem, eget convallis lectus. Donec nibh lectus, blandit non mattis non, dignissim non velit. Curabitur consectetur euismod lacus, et sagittis mi cursus ut.',
     video: true,
   },
   {
     id: 2,
-    img: './service2.jpg',
+    img: '/service2.jpg',
     title: 'Lorem ipsum dolor sit amet',
     text:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sed tincidunt sem, eget convallis lectus. Donec nibh lectus, blandit non mattis non, dignissim non velit. Curabitur consectetur euismod lacus, et sagittis mi cursus ut.',
@@ -86,7 +86,7 @@ const data = [
   },
   {
     id: 3,
-    img: './service3.jpg',
+    img: '/service3.jpg',
     title: 'Lorem ipsum dolor sit amet',
     text:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sed tincidunt sem, eget convallis lectus. Donec nibh lectus, blandit non mattis non, dignissim non velit. Curabitur consectetur euismod lacus, et sagittis mi cursus ut.',
@@ -94,7 +94,7 @@ const data = [
   },
   {
     id: 4,
-    img: './service4.jpg',
+    img: '/service4.jpg',
     title: 'Lorem ipsum dolor sit amet',
     text:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sed tincidunt sem, eget convallis lectus. Donec nibh lectus, blandit non mattis non, dignissim non velit. Curabitur consectetur euismod lacus, et sagittis mi cursus ut.',

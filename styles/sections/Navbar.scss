@@ -23,7 +23,10 @@
       width: 90%;
       margin: 0 auto;
       align-items: center;
-      transform: translateX(1.5rem);
+
+      @include media('>=tablet') {
+        transform: translateX(1.5rem);
+      }
 
       &.normal {
         transform: translateX(0rem);

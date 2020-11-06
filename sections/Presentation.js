@@ -1,7 +1,7 @@
 import React, { useEffect, useContext } from 'react';
 import Aside from '../component/Aside';
 import { Mark } from '../effect/Mark';
-import Image from '../component/Image'
+import ImageEffect from '../component/ImageEffect'
 import { Kvadratbokiem } from '../svg/index'
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
@@ -64,7 +64,7 @@ function Presentation() {
           {data.map((el, i) => {
             return (
               <div className='presentation__box' key={el.title}>
-                <Image cl='presentation__image' img={el.img} i={i}/>
+                <ImageEffect cl='presentation__image' img={el.img} i={i}/>
                 <h3>{el.title}</h3>
                 <p>{el.text}</p>
               </div>
@@ -80,28 +80,28 @@ export default Presentation;
 
 const data = [
   {
-    img: './presentation1.jpg',
+    img: '/presentation1.jpg',
     title: 'Lorem ipsum dolor sit',
     text:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sed tincidunt sem, eget convallis lectus. Donec nibh lectus, blandit non mattis non, dignissim non velit. Curabitur consectetur euismod lacus, et sagittis mi cursus ut. ',
     btn: '#',
   },
   {
-    img: './presentation2.jpg',
+    img: '/presentation2.jpg',
     title: 'Lorem ipsum dolor sit',
     text:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sed tincidunt sem, eget convallis lectus. Donec nibh lectus, blandit non mattis non, dignissim non velit. Curabitur consectetur euismod lacus, et sagittis mi cursus ut. ',
     btn: '#',
   },
   {
-    img: './presentation3.jpg',
+    img: '/presentation3.jpg',
     title: 'Lorem ipsum dolor sit',
     text:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sed tincidunt sem, eget convallis lectus. Donec nibh lectus, blandit non mattis non, dignissim non velit. Curabitur consectetur euismod lacus, et sagittis mi cursus ut. ',
     btn: '#',
   },
   {
-    img: './presentation4.jpg',
+    img: '/presentation4.jpg',
     title: 'Lorem ipsum dolor sit',
     text:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sed tincidunt sem, eget convallis lectus. Donec nibh lectus, blandit non mattis non, dignissim non velit. Curabitur consectetur euismod lacus, et sagittis mi cursus ut. ',

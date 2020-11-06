@@ -2,7 +2,7 @@ import React, { useEffect, useContext } from 'react';
 import Aside from '../component/Aside';
 import { Kvadratbokiem, Linkedin, Kolo, KoloMale } from '../svg/index';
 import { Mark } from '../effect/Mark';
-import Image from '../component/Image';
+import ImageEffect from '../component/ImageEffect';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
@@ -91,7 +91,7 @@ function Team() {
             <Kvadratbokiem />
           </div>
           <div className='team__box'>
-            <Image cl='team__img' img='man.jpg' />
+            <ImageEffect cl='team__img' img='/man.jpg' />
 
             <h3>Darek Marek</h3>
             <p>

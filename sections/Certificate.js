@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import Aside from '../component/Aside';
 import { Mark } from '../effect/Mark';
-import Image from '../component/Image';
+import ImageEffect from '../component/ImageEffect';
 import { Koleczka, KoloKolo } from '../svg/index';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
@@ -64,7 +64,7 @@ function Certificate() {
                 className={`certificate__box ${i % 2 === 0 ? 'reverse' : ''}`}
                 key={i}
               >
-                <Image cl='certificate__img' img={el.img} i={i} />
+                <ImageEffect cl='certificate__img' img={el.img} i={i} />
                 <div className='certificate__info'>
                   <h3>{el.title}</h3>
                   <p>{el.text}</p>
@@ -82,13 +82,13 @@ export default Certificate;
 
 const data = [
   {
-    img: './certyfikat1.jpg',
+    img: '/certyfikat1.jpg',
     title: 'Tlumacz przysiegly level A',
     text:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sed tincidunt sem, eget convallis lectus. Donec nibh lectus, blandit non mattis non, dignissim non velit. Curabitur consectetur euismod lacus, et sagittis mi cursus ut. ',
   },
   {
-    img: './certyfikat2.jpg',
+    img: '/certyfikat2.jpg',
     title: 'Tlumacz przysiegly level B',
     text:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sed tincidunt sem, eget convallis lectus. Donec nibh lectus, blandit non mattis non, dignissim non velit. Curabitur consectetur euismod lacus, et sagittis mi cursus ut. ',

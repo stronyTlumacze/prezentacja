@@ -1,6 +1,7 @@
 import React from 'react';
 import Aside from '../component/Aside';
 import Typed from 'react-typed';
+import Image from 'next/image';
 
 function Welcome() {
   return (
@@ -37,9 +38,12 @@ function Welcome() {
         </div>
 
         <div className='welcome__bg'>
-          <div>
-            <img src='./welcome-person-circle.png' />
-          </div>
+            <Image
+              src='/welcome-person-circle.png'
+              alt='Welcome picture'
+              width={310}
+              height={420}
+            />
         </div>
       </div>
     </div>

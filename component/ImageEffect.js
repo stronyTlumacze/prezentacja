@@ -2,8 +2,9 @@ import React, { useEffect } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
+import Image from 'next/image';
 
-function Image({ cl, img, i }) {
+function ImageEffect({ cl, img, i }) {
   let klasa;
   let span;
   let wrapper;
@@ -24,9 +25,10 @@ function Image({ cl, img, i }) {
   useEffect(() => {
     klasa = document.querySelector(`.${cl}-grab-${i || ''}`);
     wrapper = klasa.querySelector('.mark-image-wrapper');
-    span = klasa.querySelector('.mark-image-span');
 
-    
+    let span = document.createElement('span')
+    span.classList.add('mark-image-span')
+    wrapper.firstChild.firstChild.appendChild(span)
 
     ScrollTrigger.batch(wrapper, {
       start: 'top 600px',
@@ -65,11 +67,15 @@ function Image({ cl, img, i }) {
   return (
     <div className={`${cl} mark-image-container ${cl}-grab-${i || ''}`}>
       <div className='mark-image-wrapper'>
-        <img src={img} className='mark-image' />
-        <span className='mark-image-span'></span>
+        <Image
+          src={img}
+          width={400}
+          height={350}
+          className='mark-image'
+        />
       </div>
     </div>
   );
 }
 
-export default Image;
+export default ImageEffect;
