@@ -70,7 +70,7 @@ function ImageEffect({ cl, img, i }) {
         <Image
           src={img}
           width={400}
-          height={350}
+          height={310}
           className='mark-image'
         />
       </div>
